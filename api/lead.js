@@ -42,9 +42,12 @@ const EMAIL_TEMPLATES = {
   })
 };
 
-// Send email via Resend
+// Send email via Resend (fixed version)
 async function sendEmail(to, template) {
-  if (!RESEND_API_KEY) return null;
+  if (!RESEND_API_KEY) {
+    console.log('RESEND_API_KEY not set');
+    return null;
+  }
   
   const postData = JSON.stringify({
     from: 'ZOOM Growth <hello@zoomgrowth.ai>',
@@ -54,7 +57,7 @@ async function sendEmail(to, template) {
   });
   
   return new Promise((resolve, reject) => {
-    const req = https.request({
+    const request = https.request({
       hostname: 'api.resend.com',
       port: 443,
       path: '/emails',
@@ -62,16 +65,27 @@ async function sendEmail(to, template) {
       headers: {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
         'Content-Type': 'application/json',
-        'Content-Length': postData.length
+        'Content-Length': Buffer.byteLength(postData)
       }
-    }, (res) => {
+    }, (response) => {
       let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve(JSON.parse(data)));
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          resolve(data);
+        }
+      });
     });
-    req.on('error', reject);
-    req.write(postData);
-    req.end();
+    
+    request.on('error', (e) => {
+      console.error('Email send error:', e);
+      reject(e);
+    });
+    
+    request.write(postData);
+    request.end();
   });
 }
 
@@ -87,23 +101,28 @@ async function sendToGHL(data) {
   
   return new Promise((resolve, reject) => {
     const url = new URL(GHL_WEBHOOK);
-    const req = https.request({
+    const request = https.request({
       hostname: url.hostname,
       port: 443,
       path: url.pathname + url.search,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Content-Length': ghlData.length
+        'Content-Length': Buffer.byteLength(ghlData)
       }
-    }, (res) => {
+    }, (response) => {
       let data = '';
-      res.on('data', chunk => data += chunk);
-      res.on('end', () => resolve(data));
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => resolve(data));
     });
-    req.on('error', reject);
-    req.write(ghlData);
-    req.end();
+    
+    request.on('error', (e) => {
+      console.error('GHL send error:', e);
+      reject(e);
+    });
+    
+    request.write(ghlData);
+    request.end();
   });
 }
 
@@ -124,20 +143,33 @@ module.exports = async (req, res) => {
   try {
     const data = req.body;
     
+    console.log('Received lead data:', JSON.stringify(data));
+    
     // Send to GHL
-    await sendToGHL(data);
+    const ghlResult = await sendToGHL(data);
+    console.log('GHL result:', ghlResult);
     
-    // Send welcome email
+    // Send welcome email if firstName and email exist
+    let emailResult = null;
     if (data.firstName && data.email) {
-      await sendEmail(data.email, EMAIL_TEMPLATES.welcome(data.firstName));
+      console.log('Sending welcome email to:', data.email);
+      emailResult = await sendEmail(data.email, EMAIL_TEMPLATES.welcome(data.firstName));
+      console.log('Email result:', JSON.stringify(emailResult));
     }
     
-    // Send quiz result email
+    // Send quiz result email if quizScore exists
+    let quizEmailResult = null;
     if (data.quizScore && data.email) {
-      await sendEmail(data.email, EMAIL_TEMPLATES.quizResult(data.email, data.quizScore));
+      console.log('Sending quiz email to:', data.email);
+      quizEmailResult = await sendEmail(data.email, EMAIL_TEMPLATES.quizResult(data.email, data.quizScore));
+      console.log('Quiz email result:', JSON.stringify(quizEmailResult));
     }
     
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ 
+      success: true,
+      emailSent: !!emailResult,
+      quizEmailSent: !!quizEmailResult
+    });
   } catch (error) {
     console.error('Lead API error:', error);
     return res.status(500).json({ error: error.message });
