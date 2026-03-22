@@ -413,10 +413,7 @@ async function submitCapture(event) {
       mode: 'no-cors',
       body: JSON.stringify({
         email: email,
-        source: 'ZOOM Growth Website',
-        page: 'AI Tools - Email Capture',
-        quizScore: window.lastQuizScore || null,
-        timestamp: new Date().toISOString()
+        notes: `AI Readiness Score: ${window.lastQuizScore || 'Not taken'}\n\nSource: ZOOM Growth Website - AI Tools Page\nSubmitted: ${new Date().toLocaleString()}`
       })
     });
     

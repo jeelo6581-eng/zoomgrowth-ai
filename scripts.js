@@ -141,11 +141,7 @@ async function submitContact(event) {
         lastName: data.lastName,
         email: data.email,
         phone: data.phone || '',
-        businessType: data.businessType,
-        goals: data.goals,
-        source: 'ZOOM Growth Website',
-        page: 'Contact Form',
-        timestamp: new Date().toISOString()
+        notes: `Business Type: ${data.businessType}\nGoals: ${data.goals}\n\nSource: ZOOM Growth Website - Contact Form\nSubmitted: ${new Date().toLocaleString()}`
       })
     });
     
