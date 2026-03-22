@@ -1,13 +1,16 @@
 {
   "name": "zoom-growth",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "ZOOM Growth AI Automation Landing Page",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "npx serve ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["landing-page", "ai", "automation"],
+  "author": "ZOOM Growth",
   "license": "ISC",
-  "type": "commonjs"
+  "engines": {
+    "node": ">=18"
+  }
 }
