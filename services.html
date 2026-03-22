@@ -595,8 +595,12 @@
           body: JSON.stringify({ priceId: prices[tier], tier: tier })
         });
         
-        const { sessionId } = await response.json();
-        await stripe.redirectToCheckout({ sessionId });
+        const data = await response.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          throw new Error('No checkout URL returned');
+        }
       } catch (error) {
         // Fallback: redirect to Stripe Payment Link or contact
         console.error('Checkout error:', error);
