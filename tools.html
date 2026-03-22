@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Tools | ZOOM Growth - Free Assessments & Calculators</title>
+  <meta name="description" content="Discover your AI readiness score, calculate your automation ROI, and find out what can be automated in your business with our free interactive tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Background -->
+  <div class="ambient-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="grid-overlay"></div>
+    <div class="noise-overlay"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-text">ZOOM<span class="brand-accent">Growth</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="tools.html" class="nav-link active">AI Tools</a>
+      </div>
+      <div class="nav-cta">
+        <a href="/#contact" class="btn btn-primary btn-nav">Book Strategy Call</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="section-tag">Free Tools</span>
+        <h1 class="page-title">Discover Your <span class="text-gradient">AI Potential</span></h1>
+        <p class="page-subtitle">Use our interactive tools to assess your automation readiness, calculate potential savings, and find opportunities in your business.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool Selection -->
+  <section class="section">
+    <div class="container">
+      <div class="tools-selector">
+        <button class="tool-tab active" data-tool="quiz">
+          <span class="tab-icon">📊</span>
+          <span class="tab-text">AI Readiness Quiz</span>
+        </button>
+        <button class="tool-tab" data-tool="calculator">
+          <span class="tab-icon">💰</span>
+          <span class="tab-text">ROI Calculator</span>
+        </button>
+        <button class="tool-tab" data-tool="scanner">
+          <span class="tab-icon">🔍</span>
+          <span class="tab-text">Automation Scanner</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool 1: AI Readiness Quiz -->
+  <section class="section tool-section" id="tool-quiz">
+    <div class="container">
+      <div class="tool-container glass-card">
+        <div class="tool-header">
+          <div class="tool-icon-large">📊</div>
+          <div class="tool-intro">
+            <h2>AI Readiness Score</h2>
+            <p>Answer 6 quick questions to discover how ready your business is for AI automation — and what you could gain.</p>
+          </div>
+        </div>
+        
+        <div class="quiz-container" id="quizContainer">
+          <div class="quiz-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="quizProgress" style="width: 16.66%"></div>
+            </div>
+            <span class="progress-text">Question <span id="currentQ">1</span> of 6</span>
+          </div>
+          
+          <!-- Question 1 -->
+          <div class="quiz-question active" data-q="1">
+            <h3>How do you currently handle incoming leads?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-score="1" data-tag="manual">
+                <span class="option-icon">😰</span>
+                <span class="option-text">Manually reply to everything myself</span>
+              </button>
+              <button class="quiz-option" data-score="2" data-tag="team">
+                <span class="option-icon">👥</span>
+                <span class="option-text">Team handles it, but response is slow</span>
+              </button>
+              <button class="quiz-option" data-score="3" data-tag="partial">
+                <span class="option-icon">📧</span>
+                <span class="option-text">Some email automation, but basic</span>
+              </button>
+              <button class="quiz-option" data-score="4" data-tag="advanced">
+                <span class="option-icon">🤖</span>
+                <span class="option-text">Already using chatbots or auto-responders</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Question 2 -->
+          <div class="quiz-question" data-q="2">
+            <h3>What's your biggest operational bottleneck?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-score="1" data-tag="time">
+                <span class="option-icon">⏰</span>
+                <span class="option-text">Not enough hours in the day</span>
+              </button>
+              <button class="quiz-option" data-score="2" data-tag="hiring">
+                <span class="option-icon">👥</span>
+                <span class="option-text">Can't find or afford good people</span>
+              </button>
+              <button class="quiz-option" data-score="3" data-tag="conversion">
+                <span class="option-icon">💰</span>
+                <span class="option-text">Leads aren't converting well</span>
+              </button>
+              <button class="quiz-option" data-score="4" data-tag="systems">
+                <span class="option-icon">🔗</span>
+                <span class="option-text">Systems don't talk to each other</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Question 3 -->
+          <div class="quiz-question" data-q="3">
+            <h3>What's your current monthly revenue?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-score="1" data-tag="starter">
+                <span class="option-icon">🌱</span>
+                <span class="option-text">Under €10K/month</span>
+              </button>
+              <button class="quiz-option" data-score="2" data-tag="growing">
+                <span class="option-icon">📈</span>
+                <span class="option-text">€10K - €50K/month</span>
+              </button>
+              <button class="quiz-option" data-score="3" data-tag="scaling">
+                <span class="option-icon">🚀</span>
+                <span class="option-text">€50K - €100K/month</span>
+              </button>
+              <button class="quiz-option" data-score="4" data-tag="established">
+                <span class="option-icon">💎</span>
+                <span class="option-text">€100K+/month</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Question 4 -->
+          <div class="quiz-question" data-q="4">
+            <h3>How many hours per week do you spend on repetitive tasks?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-score="4" data-tag="high">
+                <span class="option-icon">🔥</span>
+                <span class="option-text">30+ hours — it's overwhelming</span>
+              </button>
+              <button class="quiz-option" data-score="3" data-tag="medium">
+                <span class="option-icon">😓</span>
+                <span class="option-text">15-30 hours — significant chunk</span>
+              </button>
+              <button class="quiz-option" data-score="2" data-tag="low">
+                <span class="option-icon">🙂</span>
+                <span class="option-text">5-15 hours — manageable</span>
+              </button>
+              <button class="quiz-option" data-score="1" data-tag="minimal">
+                <span class="option-icon">✨</span>
+                <span class="option-text">Under 5 hours — mostly optimized</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Question 5 -->
+          <div class="quiz-question" data-q="5">
+            <h3>How tech-savvy is your team?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-score="1" data-tag="basic">
+                <span class="option-icon">😅</span>
+                <span class="option-text">We struggle with basic tools</span>
+              </button>
+              <button class="quiz-option" data-score="2" data-tag="comfortable">
+                <span class="option-icon">👍</span>
+                <span class="option-text">Comfortable with common software</span>
+              </button>
+              <button class="quiz-option" data-score="3" data-tag="proficient">
+                <span class="option-icon">💪</span>
+                <span class="option-text">We use multiple SaaS tools daily</span>
+              </button>
+              <button class="quiz-option" data-score="4" data-tag="technical">
+                <span class="option-icon">🚀</span>
+                <span class="option-text">Very technical, already automating</span>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Question 6 -->
+          <div class="quiz-question" data-q="6">
+            <h3>How quickly do you want to see results?</h3>
+            <div class="quiz-options">
+              <button class="quiz-option" data-score="2" data-tag="patient">
+                <span class="option-icon">🐢</span>
+                <span class="option-text">I can wait 3-6 months</span>
+              </button>
+              <button class="quiz-option" data-score="3" data-tag="moderate">
+                <span class="option-icon">🏃</span>
+                <span class="option-text">1-2 months would be ideal</span>
+              </button>
+              <button class="quiz-option" data-score="4" data-tag="urgent">
+                <span class="option-icon">⚡</span>
+                <span class="option-text">ASAP — losing money every day</span>
+              </button>
+              <button class="quiz-option" data-score="1" data-tag="exploring">
+                <span class="option-icon">🤔</span>
+                <span class="option-text">No rush, just exploring</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Quiz Results -->
+        <div class="quiz-results" id="quizResults">
+          <div class="results-score">
+            <div class="score-visual">
+              <svg viewBox="0 0 120 120" class="score-ring">
+                <defs>
+                  <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#0ea5e9"/>
+                    <stop offset="100%" style="stop-color:#6366f1"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="60" cy="60" r="54" class="ring-bg"/>
+                <circle cx="60" cy="60" r="54" class="ring-progress" id="scoreRing"/>
+              </svg>
+              <div class="score-center">
+                <span class="score-number" id="scoreNumber">0</span>
+                <span class="score-max">/100</span>
+              </div>
+            </div>
+            <div class="score-label" id="scoreLabel">Calculating...</div>
+          </div>
+          
+          <div class="results-breakdown">
+            <h3>Your AI Readiness Profile</h3>
+            <p id="scoreDescription">Based on your answers, here's what we found...</p>
+            
+            <div class="results-metrics">
+              <div class="result-metric">
+                <span class="metric-icon">⏰</span>
+                <div class="metric-content">
+                  <span class="metric-value" id="timeSaved">20+ hours</span>
+                  <span class="metric-label">Potential Weekly Time Savings</span>
+                </div>
+              </div>
+              <div class="result-metric">
+                <span class="metric-icon">💰</span>
+                <div class="metric-content">
+                  <span class="metric-value" id="moneySaved">€50K+</span>
+                  <span class="metric-label">Annual Revenue Opportunity</span>
+                </div>
+              </div>
+              <div class="result-metric">
+                <span class="metric-icon">🎯</span>
+                <div class="metric-content">
+                  <span class="metric-value" id="priority">Lead Handling</span>
+                  <span class="metric-label">Top Automation Priority</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="results-cta">
+              <p>Want a personalized automation roadmap?</p>
+              <a href="/#contact" class="btn btn-primary btn-large btn-glow">
+                <span>Get My Custom AI Plan</span>
+              </a>
+              <button class="btn btn-secondary" onclick="resetQuiz()">Retake Quiz</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool 2: ROI Calculator -->
+  <section class="section section-dark tool-section hidden" id="tool-calculator">
+    <div class="container">
+      <div class="tool-container glass-card">
+        <div class="tool-header">
+          <div class="tool-icon-large">💰</div>
+          <div class="tool-intro">
+            <h2>Revenue Loss Calculator</h2>
+            <p>Find out how much time and money your business is losing without AI automation.</p>
+          </div>
+        </div>
+        
+        <div class="calculator-form">
+          <div class="calc-row">
+            <div class="calc-field">
+              <label>Monthly Revenue</label>
+              <div class="range-wrapper">
+                <input type="range" id="calcRevenue" min="5000" max="500000" step="5000" value="50000">
+                <span class="range-value" id="calcRevenueValue">€50,000</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="calc-row">
+            <div class="calc-field">
+              <label>Team Size</label>
+              <div class="range-wrapper">
+                <input type="range" id="calcTeam" min="1" max="50" step="1" value="5">
+                <span class="range-value" id="calcTeamValue">5 people</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="calc-row">
+            <div class="calc-field">
+              <label>Hours on Manual Work (per week, per person)</label>
+              <div class="range-wrapper">
+                <input type="range" id="calcHours" min="2" max="40" step="2" value="15">
+                <span class="range-value" id="calcHoursValue">15 hours</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="calc-row">
+            <div class="calc-field">
+              <label>Average Hourly Cost (salary + overhead)</label>
+              <div class="range-wrapper">
+                <input type="range" id="calcRate" min="20" max="150" step="5" value="45">
+                <span class="range-value" id="calcRateValue">€45/hour</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="calc-row">
+            <div class="calc-field">
+              <label>Lead Response Time (hours)</label>
+              <div class="range-wrapper">
+                <input type="range" id="calcResponse" min="0.5" max="48" step="0.5" value="4">
+                <span class="range-value" id="calcResponseValue">4 hours</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="calculator-results">
+          <h3>Your Annual Losses Without Automation</h3>
+          
+          <div class="loss-cards">
+            <div class="loss-card">
+              <span class="loss-icon">⏰</span>
+              <span class="loss-value" id="lossTime">3,900</span>
+              <span class="loss-label">Hours lost to manual work/year</span>
+            </div>
+            <div class="loss-card">
+              <span class="loss-icon">💸</span>
+              <span class="loss-value" id="lossLabor">€175,500</span>
+              <span class="loss-label">Labor cost on automatable tasks</span>
+            </div>
+            <div class="loss-card">
+              <span class="loss-icon">📉</span>
+              <span class="loss-value" id="lossLeads">€90,000</span>
+              <span class="loss-label">Lost revenue from slow response</span>
+            </div>
+          </div>
+          
+          <div class="loss-total glass-card">
+            <span class="total-label">Total Annual Loss</span>
+            <span class="total-value" id="lossTotal">€265,500</span>
+            <span class="total-note">That's <span id="lossPercent">44%</span> of your annual revenue</span>
+          </div>
+          
+          <div class="calc-cta">
+            <p>With AI automation, you could recover most of this.</p>
+            <a href="/#contact" class="btn btn-primary btn-large btn-glow">
+              <span>See What We Can Automate</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tool 3: Automation Scanner -->
+  <section class="section tool-section hidden" id="tool-scanner">
+    <div class="container">
+      <div class="tool-container glass-card">
+        <div class="tool-header">
+          <div class="tool-icon-large">🔍</div>
+          <div class="tool-intro">
+            <h2>Automation Opportunity Scanner</h2>
+            <p>Select your business type and see exactly what processes can be automated.</p>
+          </div>
+        </div>
+        
+        <div class="scanner-selection" id="scannerSelection">
+          <h3>What type of business do you run?</h3>
+          <div class="business-types">
+            <button class="business-type" data-type="agency">
+              <span class="type-icon">🏢</span>
+              <span class="type-name">Agency / Consultancy</span>
+            </button>
+            <button class="business-type" data-type="ecommerce">
+              <span class="type-icon">🛒</span>
+              <span class="type-name">E-commerce / Retail</span>
+            </button>
+            <button class="business-type" data-type="saas">
+              <span class="type-icon">💻</span>
+              <span class="type-name">SaaS / Software</span>
+            </button>
+            <button class="business-type" data-type="coaching">
+              <span class="type-icon">🎯</span>
+              <span class="type-name">Coaching / Training</span>
+            </button>
+            <button class="business-type" data-type="services">
+              <span class="type-icon">⚙️</span>
+              <span class="type-name">Professional Services</span>
+            </button>
+            <button class="business-type" data-type="local">
+              <span class="type-icon">📍</span>
+              <span class="type-name">Local Business</span>
+            </button>
+          </div>
+        </div>
+        
+        <div class="scanner-results hidden" id="scannerResults">
+          <div class="scanner-header">
+            <button class="back-btn" onclick="resetScanner()">← Choose Different Business</button>
+            <h3>Automation Opportunities for <span id="businessTypeTitle">Your Business</span></h3>
+          </div>
+          
+          <div class="automation-list" id="automationList">
+            <!-- Populated by JS -->
+          </div>
+          
+          <div class="scanner-summary glass-card">
+            <div class="summary-stat">
+              <span class="summary-value" id="automationCount">12</span>
+              <span class="summary-label">Processes can be automated</span>
+            </div>
+            <div class="summary-stat">
+              <span class="summary-value" id="automationHours">25+ hrs</span>
+              <span class="summary-label">Saved per week</span>
+            </div>
+            <div class="summary-stat">
+              <span class="summary-value" id="automationImpact">High</span>
+              <span class="summary-label">Revenue impact potential</span>
+            </div>
+          </div>
+          
+          <div class="scanner-cta">
+            <p>Ready to automate these processes?</p>
+            <a href="/#contact" class="btn btn-primary btn-large btn-glow">
+              <span>Get My Automation Plan</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture -->
+  <section class="section section-dark" id="lead-capture">
+    <div class="container">
+      <div class="capture-wrapper glass-card">
+        <div class="capture-content">
+          <h2>Get Your Complete <span class="text-gradient">AI Roadmap</span></h2>
+          <p>Enter your email and we'll send you a personalized automation roadmap based on your results — plus exclusive insights on AI business automation.</p>
+          <form class="capture-form" id="captureForm" onsubmit="submitCapture(event)">
+            <div class="capture-inputs">
+              <input type="email" name="email" placeholder="your@email.com" required>
+              <button type="submit" class="btn btn-primary">
+                <span>Send My Roadmap</span>
+              </button>
+            </div>
+            <p class="capture-note">🔒 No spam. Unsubscribe anytime.</p>
+          </form>
+          <div class="capture-success hidden" id="captureSuccess">
+            <span class="success-icon">✓</span>
+            <span>Check your inbox! Your roadmap is on the way.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand">
+          <a href="/" class="nav-brand">
+            <span class="brand-icon">⚡</span>
+            <span class="brand-text">ZOOM<span class="brand-accent">Growth</span></span>
+          </a>
+          <p>AI-powered business automation for companies ready to scale.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="/">Home</a>
+            <a href="services.html">Services</a>
+            <a href="tools.html">AI Tools</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html#chatbots">AI Chatbots</a>
+            <a href="services.html#automation">Workflow Automation</a>
+            <a href="services.html#content">Content Creation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="/#contact">Contact</a>
+            <a href="/#faq">FAQ</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ZOOM Growth. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script src="tools.js"></script>
+</body>
+</html>

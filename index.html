@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZOOM Growth | AI Business Automation Systems</title>
+  <title>ZOOM Growth | AI Business Automation Agency</title>
+  <meta name="description" content="Automate your business with AI. ZOOM Growth installs intelligent systems that replace manual work, capture leads, and scale your operations.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,849 +20,613 @@
     <div class="noise-overlay"></div>
   </div>
 
-  <!-- Sticky CTA -->
-  <div class="sticky-cta" id="stickyCta">
-    <div class="sticky-inner">
-      <span class="sticky-text">Limited spots available</span>
-      <button class="btn btn-primary btn-glow" onclick="scrollToApplication()">
-        Apply Now
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">
+        <span class="brand-icon">⚡</span>
+        <span class="brand-text">ZOOM<span class="brand-accent">Growth</span></span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="tools.html" class="nav-link">AI Tools</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary btn-nav">Book Strategy Call</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
-  </div>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <div class="hero-content">
-      <div class="trust-badges fade-in">
-        <div class="badge">
-          <span class="badge-number">147+</span>
-          <span class="badge-label">Businesses Transformed</span>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge fade-in">
+          <span class="badge-dot"></span>
+          <span>AI-Powered Business Automation</span>
         </div>
-        <div class="badge-divider"></div>
-        <div class="badge">
-          <span class="badge-number">€23M+</span>
-          <span class="badge-label">Revenue Generated</span>
+        
+        <h1 class="hero-title fade-in delay-1">
+          <span class="title-line">Turn Your Business Into</span>
+          <span class="title-line title-gradient">A Self-Running Machine</span>
+        </h1>
+        
+        <p class="hero-subtitle fade-in delay-2">
+          We install AI systems that automate your sales, support, and operations — so you can scale without hiring more people or working more hours.
+        </p>
+        
+        <div class="hero-ctas fade-in delay-3">
+          <a href="#contact" class="btn btn-primary btn-large btn-glow">
+            <span>Book Strategy Call</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="tools.html" class="btn btn-secondary btn-large">
+            <span>Get My AI Plan</span>
+          </a>
         </div>
-        <div class="badge-divider"></div>
-        <div class="badge">
-          <span class="badge-number">89%</span>
-          <span class="badge-label">Time Saved</span>
+        
+        <div class="hero-stats fade-in delay-4">
+          <div class="stat-item">
+            <span class="stat-value">147+</span>
+            <span class="stat-label">Businesses Automated</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">89%</span>
+            <span class="stat-label">Time Saved</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">24/7</span>
+            <span class="stat-label">Systems Running</span>
+          </div>
         </div>
       </div>
-
-      <h1 class="hero-headline fade-in delay-1">
-        <span class="headline-accent">Replace 70% of Your Workload</span>
-        <span class="headline-main">With AI Systems That Never Sleep</span>
-      </h1>
-
-      <p class="hero-subheadline fade-in delay-2">
-        We build automated revenue machines for entrepreneurs ready to scale past €100K/month — without hiring more people.
-      </p>
-
-      <div class="hero-cta fade-in delay-3">
-        <button class="btn btn-primary btn-large btn-glow" onclick="scrollToApplication()">
-          <span>Build My AI System</span>
-          <div class="btn-shine"></div>
-        </button>
-        <p class="cta-note">Free strategy session • No commitment required</p>
-      </div>
-
+      
       <div class="hero-visual fade-in delay-4">
-        <div class="dashboard-preview">
-          <div class="preview-header">
-            <div class="preview-dots">
-              <span></span><span></span><span></span>
-            </div>
-            <span class="preview-title">ZOOM AI Dashboard</span>
+        <div class="visual-card">
+          <div class="visual-header">
+            <div class="visual-dots"><span></span><span></span><span></span></div>
+            <span class="visual-title">Clawdbot Dashboard</span>
           </div>
-          <div class="preview-content">
-            <div class="metric-card">
-              <span class="metric-label">Leads Today</span>
-              <span class="metric-value counting" data-target="147">0</span>
-              <span class="metric-change positive">+34%</span>
+          <div class="visual-content">
+            <div class="visual-metric">
+              <div class="metric-icon">🤖</div>
+              <div class="metric-info">
+                <span class="metric-label">AI Conversations</span>
+                <span class="metric-value">1,247</span>
+              </div>
+              <span class="metric-badge success">Live</span>
             </div>
-            <div class="metric-card">
-              <span class="metric-label">AI Conversations</span>
-              <span class="metric-value counting" data-target="892">0</span>
-              <span class="metric-change positive">Active</span>
+            <div class="visual-metric">
+              <div class="metric-icon">📈</div>
+              <div class="metric-info">
+                <span class="metric-label">Leads Captured</span>
+                <span class="metric-value">384</span>
+              </div>
+              <span class="metric-badge">+47%</span>
             </div>
-            <div class="metric-card">
-              <span class="metric-label">Revenue</span>
-              <span class="metric-value">€<span class="counting" data-target="47850">0</span></span>
-              <span class="metric-change positive">+127%</span>
+            <div class="visual-metric">
+              <div class="metric-icon">⏰</div>
+              <div class="metric-info">
+                <span class="metric-label">Hours Saved</span>
+                <span class="metric-value">156</span>
+              </div>
+              <span class="metric-badge">This Week</span>
             </div>
-            <div class="automation-flow">
-              <div class="flow-step active">
-                <span class="step-icon">🎯</span>
-                <span class="step-label">Lead Captured</span>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-step active">
-                <span class="step-icon">🤖</span>
-                <span class="step-label">AI Qualifying</span>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-step">
-                <span class="step-icon">📞</span>
-                <span class="step-label">Call Booked</span>
-              </div>
-              <div class="flow-arrow">→</div>
-              <div class="flow-step">
-                <span class="step-icon">💰</span>
-                <span class="step-label">Deal Closed</span>
-              </div>
+            <div class="visual-flow">
+              <div class="flow-node active"><span>Lead In</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-node active"><span>AI Qualifies</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-node"><span>Call Booked</span></div>
+              <div class="flow-line"></div>
+              <div class="flow-node"><span>Deal Closed</span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="scroll-indicator">
+    
+    <div class="hero-scroll">
       <span>Scroll to explore</span>
-      <div class="scroll-arrow"></div>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
-  <!-- Pain Section -->
-  <section class="pain-section" id="pain">
+  <!-- Problem Section -->
+  <section class="section section-dark" id="problem">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">THE PROBLEM</span>
-        <h2 class="section-title">You're Working <span class="text-gradient">Too Hard</span> for Too Little</h2>
+        <span class="section-tag">The Reality</span>
+        <h2 class="section-title">You're Working Too Hard <span class="text-gradient">For Too Little</span></h2>
+        <p class="section-subtitle">Most business owners are trapped doing work that machines should handle.</p>
       </div>
-
-      <div class="pain-grid">
-        <div class="pain-card glass-card">
-          <div class="pain-icon">⏰</div>
-          <h3>Drowning in Manual Tasks</h3>
-          <p>Answering the same questions. Following up manually. Copy-pasting between tools. Your day disappears into busywork.</p>
-          <div class="pain-stat">
-            <span class="stat-number">23</span>
-            <span class="stat-label">hours/week lost to tasks AI can handle</span>
+      
+      <div class="problem-grid">
+        <div class="problem-card glass-card">
+          <div class="problem-icon">⏰</div>
+          <h3>Manual Repetition</h3>
+          <p>Same emails. Same follow-ups. Same questions. Every single day. Your time disappears into tasks that never end.</p>
+          <div class="problem-stat">
+            <span class="stat-highlight">23 hrs/week</span>
+            <span class="stat-desc">lost to repetitive work</span>
           </div>
         </div>
-
-        <div class="pain-card glass-card">
-          <div class="pain-icon">💸</div>
-          <h3>Bleeding Money on Payroll</h3>
-          <p>Hiring more people to scale. Training them. Managing them. Watching margins shrink while headaches multiply.</p>
-          <div class="pain-stat">
-            <span class="stat-number">€4K+</span>
-            <span class="stat-label">/month per employee you shouldn't need</span>
+        
+        <div class="problem-card glass-card">
+          <div class="problem-icon">💸</div>
+          <h3>Expensive Growth</h3>
+          <p>Every time you want to scale, you hire. More payroll. More management. More complexity. Margins shrink.</p>
+          <div class="problem-stat">
+            <span class="stat-highlight">€4K+/month</span>
+            <span class="stat-desc">per employee you shouldn't need</span>
           </div>
         </div>
-
-        <div class="pain-card glass-card">
-          <div class="pain-icon">📉</div>
-          <h3>Leaving Revenue on the Table</h3>
-          <p>Leads go cold. Follow-ups fall through. Opportunities slip away while you're busy fighting fires.</p>
-          <div class="pain-stat">
-            <span class="stat-number">67%</span>
-            <span class="stat-label">of leads die from slow response</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="pain-calculator glass-card">
-        <h3>How Much Is This Costing You?</h3>
-        <div class="calculator-form">
-          <div class="calc-field">
-            <label>Monthly Revenue (€)</label>
-            <input type="range" id="revenueSlider" min="10000" max="500000" step="5000" value="50000">
-            <span class="calc-value" id="revenueValue">€50,000</span>
-          </div>
-          <div class="calc-field">
-            <label>Team Size</label>
-            <input type="range" id="teamSlider" min="1" max="20" step="1" value="5">
-            <span class="calc-value" id="teamValue">5 people</span>
-          </div>
-          <div class="calc-field">
-            <label>Hours on Manual Work/Week</label>
-            <input type="range" id="hoursSlider" min="5" max="60" step="5" value="25">
-            <span class="calc-value" id="hoursValue">25 hours</span>
-          </div>
-        </div>
-        <div class="calculator-result">
-          <div class="result-card">
-            <span class="result-label">You're Losing Annually</span>
-            <span class="result-value" id="lossValue">€127,400</span>
-            <span class="result-breakdown" id="lossBreakdown">€78K in labor + €49K in missed revenue</span>
+        
+        <div class="problem-card glass-card">
+          <div class="problem-icon">📉</div>
+          <h3>Missed Opportunities</h3>
+          <p>Leads go cold. Follow-ups fall through. Customers wait too long. Revenue leaks while you're busy fighting fires.</p>
+          <div class="problem-stat">
+            <span class="stat-highlight">67%</span>
+            <span class="stat-desc">of leads die from slow response</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Promise Section -->
-  <section class="promise-section" id="promise">
+  <!-- Solution Section -->
+  <section class="section" id="solution">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">THE TRANSFORMATION</span>
-        <h2 class="section-title">Imagine Your Business <span class="text-gradient">Running Itself</span></h2>
+        <span class="section-tag">The Solution</span>
+        <h2 class="section-title">We Install <span class="text-gradient">AI Systems</span> That Work For You</h2>
+        <p class="section-subtitle">Replace manual work with intelligent automation. Scale without the chaos.</p>
       </div>
-
-      <div class="promise-grid">
-        <div class="promise-card">
-          <div class="promise-before">
-            <span class="tag tag-red">BEFORE</span>
-            <p>Manually answering every DM, email, and inquiry</p>
+      
+      <div class="solution-showcase">
+        <div class="solution-main glass-card">
+          <div class="solution-badge">
+            <span class="badge-icon">🤖</span>
+            <span>Powered by Clawdbot</span>
           </div>
-          <div class="promise-arrow">→</div>
-          <div class="promise-after">
-            <span class="tag tag-green">AFTER</span>
-            <p>AI handles 90% of conversations, only escalates hot leads</p>
-          </div>
+          <h3>Your Business. Automated.</h3>
+          <p>Clawdbot is our proprietary AI system that handles conversations, qualifies leads, books appointments, and manages workflows — all without human intervention.</p>
+          <ul class="solution-features">
+            <li>
+              <span class="feature-check">✓</span>
+              <span>Responds to leads in under 30 seconds, 24/7</span>
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              <span>Qualifies prospects with intelligent questions</span>
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              <span>Books calls directly into your calendar</span>
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              <span>Handles support queries without your team</span>
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              <span>Integrates with your existing tools</span>
+            </li>
+          </ul>
+          <a href="services.html" class="btn btn-primary">
+            <span>Explore Our Services</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
-
-        <div class="promise-card">
-          <div class="promise-before">
-            <span class="tag tag-red">BEFORE</span>
-            <p>Chasing leads who go cold after 24 hours</p>
+        
+        <div class="solution-cards">
+          <div class="mini-card glass-card">
+            <div class="mini-icon">💬</div>
+            <h4>AI Chatbots</h4>
+            <p>Smart conversations that convert visitors into customers</p>
           </div>
-          <div class="promise-arrow">→</div>
-          <div class="promise-after">
-            <span class="tag tag-green">AFTER</span>
-            <p>Instant response 24/7, lead to call in under 5 minutes</p>
+          <div class="mini-card glass-card">
+            <div class="mini-icon">📞</div>
+            <h4>AI Call Center</h4>
+            <p>Voice agents that handle calls and book appointments</p>
           </div>
-        </div>
-
-        <div class="promise-card">
-          <div class="promise-before">
-            <span class="tag tag-red">BEFORE</span>
-            <p>Hiring more people to handle growth</p>
+          <div class="mini-card glass-card">
+            <div class="mini-icon">🎯</div>
+            <h4>Lead Systems</h4>
+            <p>Capture, qualify, and nurture leads automatically</p>
           </div>
-          <div class="promise-arrow">→</div>
-          <div class="promise-after">
-            <span class="tag tag-green">AFTER</span>
-            <p>10x capacity without adding headcount</p>
-          </div>
-        </div>
-
-        <div class="promise-card">
-          <div class="promise-before">
-            <span class="tag tag-red">BEFORE</span>
-            <p>Working IN your business 60+ hours/week</p>
-          </div>
-          <div class="promise-arrow">→</div>
-          <div class="promise-after">
-            <span class="tag tag-green">AFTER</span>
-            <p>Systems run while you focus on strategy and life</p>
+          <div class="mini-card glass-card">
+            <div class="mini-icon">⚙️</div>
+            <h4>Workflow Automation</h4>
+            <p>Connect your tools and eliminate manual tasks</p>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="promise-testimonial glass-card">
-        <div class="testimonial-quote">
-          "Within 3 weeks, my AI system booked 47 calls while I was on vacation. Closed €89K without touching my phone."
+  <!-- Services Overview -->
+  <section class="section section-dark" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Build</span>
+        <h2 class="section-title">End-to-End <span class="text-gradient">AI Solutions</span></h2>
+        <p class="section-subtitle">From lead generation to customer support — we automate it all.</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card glass-card" data-category="automation">
+          <div class="service-icon">🤖</div>
+          <h3>Clawdbot Installation</h3>
+          <p>Deploy our AI assistant across your website, social channels, and messaging apps.</p>
         </div>
-        <div class="testimonial-author">
-          <div class="author-avatar">MB</div>
-          <div class="author-info">
-            <span class="author-name">Marco B.</span>
-            <span class="author-title">Agency Owner, €2.1M/year</span>
-          </div>
+        
+        <div class="service-card glass-card" data-category="sales">
+          <div class="service-icon">💰</div>
+          <h3>AI Sales Systems</h3>
+          <p>Automated follow-ups, lead scoring, and pipeline management that closes deals.</p>
         </div>
+        
+        <div class="service-card glass-card" data-category="content">
+          <div class="service-icon">✍️</div>
+          <h3>Content Creation</h3>
+          <p>AI-generated blog posts, social content, and marketing copy at scale.</p>
+        </div>
+        
+        <div class="service-card glass-card" data-category="research">
+          <div class="service-icon">🔍</div>
+          <h3>Market Research</h3>
+          <p>Automated competitor analysis, trend monitoring, and opportunity identification.</p>
+        </div>
+        
+        <div class="service-card glass-card" data-category="video">
+          <div class="service-icon">🎬</div>
+          <h3>Video Generation</h3>
+          <p>AI-powered video creation for ads, content, and marketing campaigns.</p>
+        </div>
+        
+        <div class="service-card glass-card" data-category="integration">
+          <div class="service-icon">🔗</div>
+          <h3>CRM Integration</h3>
+          <p>Connect your entire tech stack with intelligent automation bridges.</p>
+        </div>
+      </div>
+      
+      <div class="services-cta">
+        <a href="services.html" class="btn btn-secondary btn-large">
+          <span>View All Services</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- How It Works -->
-  <section class="process-section" id="process">
+  <section class="section" id="process">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">THE PROCESS</span>
-        <h2 class="section-title">Your Path to <span class="text-gradient">Automated Revenue</span></h2>
-        <p class="section-subtitle">Three phases. Total transformation. No guesswork.</p>
+        <span class="section-tag">The Process</span>
+        <h2 class="section-title">From Chaos to <span class="text-gradient">Automated</span></h2>
+        <p class="section-subtitle">We handle everything. You focus on growth.</p>
       </div>
-
+      
       <div class="process-timeline">
-        <div class="process-step" data-step="1">
+        <div class="process-step">
           <div class="step-marker">
             <span class="step-number">01</span>
-            <div class="step-line"></div>
           </div>
           <div class="step-content glass-card">
-            <div class="step-icon">🔍</div>
-            <h3>Diagnose & Design</h3>
-            <p>We audit your entire business flow. Find the bottlenecks. Map where AI creates the biggest leverage. Design your custom automation stack.</p>
-            <ul class="step-outcomes">
-              <li>Full business audit</li>
-              <li>Automation roadmap</li>
-              <li>ROI projections</li>
-            </ul>
-            <span class="step-duration">Week 1</span>
+            <h3>Discovery Call</h3>
+            <p>We audit your business, identify bottlenecks, and map where AI creates the biggest impact. No fluff — just clarity.</p>
+            <span class="step-time">30 minutes</span>
           </div>
         </div>
-
-        <div class="process-step" data-step="2">
+        
+        <div class="process-step">
           <div class="step-marker">
             <span class="step-number">02</span>
-            <div class="step-line"></div>
           </div>
           <div class="step-content glass-card">
-            <div class="step-icon">⚙️</div>
-            <h3>Build & Integrate</h3>
-            <p>We build your AI systems from scratch. Chatbots. Funnels. Automations. CRM integrations. Everything talking to everything — seamlessly.</p>
-            <ul class="step-outcomes">
-              <li>AI chatbots deployed</li>
-              <li>Sales funnels live</li>
-              <li>Full system integration</li>
-            </ul>
-            <span class="step-duration">Weeks 2-4</span>
+            <h3>Custom AI Blueprint</h3>
+            <p>We design your automation architecture — which systems to build, how they connect, and the expected ROI.</p>
+            <span class="step-time">3-5 days</span>
           </div>
         </div>
-
-        <div class="process-step" data-step="3">
+        
+        <div class="process-step">
           <div class="step-marker">
             <span class="step-number">03</span>
           </div>
           <div class="step-content glass-card">
-            <div class="step-icon">🚀</div>
-            <h3>Launch & Scale</h3>
-            <p>Go live. Optimize. Scale. We monitor performance, tweak AI responses, and amplify what's working. Your machine gets smarter every day.</p>
-            <ul class="step-outcomes">
-              <li>Live system monitoring</li>
-              <li>Continuous optimization</li>
-              <li>Scaling playbooks</li>
-            </ul>
-            <span class="step-duration">Ongoing</span>
+            <h3>Build & Install</h3>
+            <p>Our team builds your AI systems from scratch — chatbots, workflows, integrations, everything. Done for you.</p>
+            <span class="step-time">2-4 weeks</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Score Quiz -->
-  <section class="quiz-section" id="quiz">
-    <div class="container">
-      <div class="quiz-wrapper glass-card">
-        <div class="quiz-header">
-          <span class="section-tag">FREE ASSESSMENT</span>
-          <h2 class="section-title">What's Your <span class="text-gradient">AI Readiness</span> Score?</h2>
-          <p>Answer 5 quick questions to see how much you could gain from automation</p>
-        </div>
-
-        <div class="quiz-progress">
-          <div class="progress-bar">
-            <div class="progress-fill" id="quizProgress"></div>
+        
+        <div class="process-step">
+          <div class="step-marker">
+            <span class="step-number">04</span>
           </div>
-          <span class="progress-text"><span id="currentQuestion">1</span> of 5</span>
-        </div>
-
-        <div class="quiz-container" id="quizContainer">
-          <!-- Question 1 -->
-          <div class="quiz-question active" data-question="1">
-            <h3>How do you currently handle incoming leads?</h3>
-            <div class="quiz-options">
-              <button class="quiz-option" data-score="1">
-                <span class="option-icon">😰</span>
-                <span class="option-text">Manually — I respond to everything myself</span>
-              </button>
-              <button class="quiz-option" data-score="2">
-                <span class="option-icon">👥</span>
-                <span class="option-text">Team handles it, but it's slow</span>
-              </button>
-              <button class="quiz-option" data-score="3">
-                <span class="option-icon">📧</span>
-                <span class="option-text">Some email automation, but not smart</span>
-              </button>
-              <button class="quiz-option" data-score="4">
-                <span class="option-icon">🤖</span>
-                <span class="option-text">Already using basic chatbots</span>
-              </button>
-            </div>
+          <div class="step-content glass-card">
+            <h3>Launch & Optimize</h3>
+            <p>Go live. We monitor performance, optimize AI responses, and continuously improve your systems.</p>
+            <span class="step-time">Ongoing</span>
           </div>
-
-          <!-- Question 2 -->
-          <div class="quiz-question" data-question="2">
-            <h3>What's your biggest bottleneck right now?</h3>
-            <div class="quiz-options">
-              <button class="quiz-option" data-score="1">
-                <span class="option-icon">⏰</span>
-                <span class="option-text">Not enough hours in the day</span>
-              </button>
-              <button class="quiz-option" data-score="2">
-                <span class="option-icon">👥</span>
-                <span class="option-text">Can't find/afford good people</span>
-              </button>
-              <button class="quiz-option" data-score="3">
-                <span class="option-icon">💰</span>
-                <span class="option-text">Leads aren't converting</span>
-              </button>
-              <button class="quiz-option" data-score="4">
-                <span class="option-icon">📊</span>
-                <span class="option-text">Systems don't talk to each other</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="quiz-question" data-question="3">
-            <h3>What's your current monthly revenue?</h3>
-            <div class="quiz-options">
-              <button class="quiz-option" data-score="1">
-                <span class="option-icon">🌱</span>
-                <span class="option-text">Under €10K/month</span>
-              </button>
-              <button class="quiz-option" data-score="2">
-                <span class="option-icon">📈</span>
-                <span class="option-text">€10K - €50K/month</span>
-              </button>
-              <button class="quiz-option" data-score="3">
-                <span class="option-icon">🚀</span>
-                <span class="option-text">€50K - €100K/month</span>
-              </button>
-              <button class="quiz-option" data-score="4">
-                <span class="option-icon">💎</span>
-                <span class="option-text">€100K+/month</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 4 -->
-          <div class="quiz-question" data-question="4">
-            <h3>How tech-savvy is your team?</h3>
-            <div class="quiz-options">
-              <button class="quiz-option" data-score="1">
-                <span class="option-icon">😅</span>
-                <span class="option-text">We struggle with basic tools</span>
-              </button>
-              <button class="quiz-option" data-score="2">
-                <span class="option-icon">👍</span>
-                <span class="option-text">Comfortable with common software</span>
-              </button>
-              <button class="quiz-option" data-score="3">
-                <span class="option-icon">💪</span>
-                <span class="option-text">We use multiple SaaS tools daily</span>
-              </button>
-              <button class="quiz-option" data-score="4">
-                <span class="option-icon">🔥</span>
-                <span class="option-text">Very technical, already automating</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 5 -->
-          <div class="quiz-question" data-question="5">
-            <h3>How quickly do you want to see results?</h3>
-            <div class="quiz-options">
-              <button class="quiz-option" data-score="2">
-                <span class="option-icon">🐢</span>
-                <span class="option-text">I can wait 3-6 months</span>
-              </button>
-              <button class="quiz-option" data-score="3">
-                <span class="option-icon">🏃</span>
-                <span class="option-text">Within 1-2 months would be great</span>
-              </button>
-              <button class="quiz-option" data-score="4">
-                <span class="option-icon">⚡</span>
-                <span class="option-text">ASAP — I'm losing money every day</span>
-              </button>
-              <button class="quiz-option" data-score="1">
-                <span class="option-icon">🤔</span>
-                <span class="option-text">Not sure yet, just exploring</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Quiz Results -->
-        <div class="quiz-results" id="quizResults">
-          <div class="result-score">
-            <div class="score-circle">
-              <svg viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" class="score-bg"/>
-                <circle cx="50" cy="50" r="45" class="score-progress" id="scoreCircle"/>
-              </svg>
-              <span class="score-value" id="scoreValue">0</span>
-            </div>
-            <h3 id="scoreLevel">Calculating...</h3>
-          </div>
-          <div class="result-details">
-            <p id="scoreDescription"></p>
-            <div class="result-metrics">
-              <div class="result-metric">
-                <span class="metric-label">Potential Time Saved</span>
-                <span class="metric-value" id="timeSaved">20+ hours/week</span>
-              </div>
-              <div class="result-metric">
-                <span class="metric-label">Revenue Opportunity</span>
-                <span class="metric-value" id="revenueOpp">€50K+/year</span>
-              </div>
-            </div>
-          </div>
-          <button class="btn btn-primary btn-large btn-glow" onclick="scrollToApplication()">
-            <span>Get Your Custom AI Plan</span>
-            <div class="btn-shine"></div>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Offer Stack -->
-  <section class="offer-section" id="offer">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">INVESTMENT</span>
-        <h2 class="section-title">Choose Your <span class="text-gradient">Transformation Level</span></h2>
-        <p class="section-subtitle">Every package includes done-for-you implementation and 90-day support</p>
-      </div>
-
-      <div class="pricing-grid">
-        <div class="pricing-card glass-card">
-          <div class="pricing-header">
-            <span class="pricing-tier">STARTER</span>
-            <div class="pricing-price">
-              <span class="currency">€</span>
-              <span class="amount">2,999</span>
-            </div>
-            <span class="pricing-note">One-time investment</span>
-          </div>
-          <div class="pricing-body">
-            <p class="pricing-desc">Perfect for entrepreneurs ready to automate their first revenue systems</p>
-            <ul class="pricing-features">
-              <li><span class="check">✓</span> 1 AI Chatbot (Sales or Support)</li>
-              <li><span class="check">✓</span> Lead Capture Funnel</li>
-              <li><span class="check">✓</span> Basic CRM Integration</li>
-              <li><span class="check">✓</span> Email Automation Sequence</li>
-              <li><span class="check">✓</span> 30-Day Support</li>
-              <li class="faded"><span class="x">✗</span> AI Call System</li>
-              <li class="faded"><span class="x">✗</span> Advanced Analytics</li>
-            </ul>
-          </div>
-          <div class="pricing-footer">
-            <button class="btn btn-secondary btn-full" onclick="scrollToApplication()">Apply for Starter</button>
-          </div>
-        </div>
-
-        <div class="pricing-card glass-card featured">
-          <div class="featured-badge">MOST POPULAR</div>
-          <div class="pricing-header">
-            <span class="pricing-tier">GROWTH</span>
-            <div class="pricing-price">
-              <span class="currency">€</span>
-              <span class="amount">4,999</span>
-            </div>
-            <span class="pricing-note">One-time investment</span>
-          </div>
-          <div class="pricing-body">
-            <p class="pricing-desc">For businesses serious about scaling with complete automation</p>
-            <ul class="pricing-features">
-              <li><span class="check">✓</span> 3 AI Chatbots (Multi-channel)</li>
-              <li><span class="check">✓</span> Complete Sales Funnel</li>
-              <li><span class="check">✓</span> Full CRM + Backend Integration</li>
-              <li><span class="check">✓</span> Advanced Email + SMS Sequences</li>
-              <li><span class="check">✓</span> AI Call Center Setup</li>
-              <li><span class="check">✓</span> Analytics Dashboard</li>
-              <li><span class="check">✓</span> 60-Day Support + Training</li>
-            </ul>
-          </div>
-          <div class="pricing-footer">
-            <button class="btn btn-primary btn-full btn-glow" onclick="scrollToApplication()">Apply for Growth</button>
-          </div>
-        </div>
-
-        <div class="pricing-card glass-card">
-          <div class="pricing-header">
-            <span class="pricing-tier">ELITE</span>
-            <div class="pricing-price">
-              <span class="currency">€</span>
-              <span class="amount">7,999</span>
-            </div>
-            <span class="pricing-note">One-time investment</span>
-          </div>
-          <div class="pricing-body">
-            <p class="pricing-desc">Full business transformation with dedicated strategy and support</p>
-            <ul class="pricing-features">
-              <li><span class="check">✓</span> Unlimited AI Systems</li>
-              <li><span class="check">✓</span> Complete Funnel Ecosystem</li>
-              <li><span class="check">✓</span> Enterprise Integrations</li>
-              <li><span class="check">✓</span> Omnichannel Automation</li>
-              <li><span class="check">✓</span> AI Voice Agents</li>
-              <li><span class="check">✓</span> Custom Reporting Suite</li>
-              <li><span class="check">✓</span> 90-Day VIP Support</li>
-              <li><span class="check">✓</span> 1-on-1 Strategy Calls (Weekly)</li>
-            </ul>
-          </div>
-          <div class="pricing-footer">
-            <button class="btn btn-secondary btn-full" onclick="scrollToApplication()">Apply for Elite</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="guarantee glass-card">
-        <div class="guarantee-icon">🛡️</div>
-        <div class="guarantee-content">
-          <h3>90-Day Results Guarantee</h3>
-          <p>If your systems don't deliver measurable ROI within 90 days, we'll work for free until they do. No questions asked.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Social Proof -->
-  <section class="proof-section" id="proof">
+  <section class="section section-dark" id="proof">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">RESULTS</span>
-        <h2 class="section-title">What Happens When <span class="text-gradient">AI Takes Over</span></h2>
+        <span class="section-tag">Results</span>
+        <h2 class="section-title">Real Businesses. <span class="text-gradient">Real Automation.</span></h2>
       </div>
-
-      <div class="case-studies">
-        <div class="case-study glass-card">
-          <div class="case-header">
-            <div class="case-avatar">SL</div>
-            <div class="case-info">
-              <span class="case-name">Sofia L.</span>
-              <span class="case-business">E-commerce Brand</span>
-            </div>
-            <span class="case-package">Growth Package</span>
+      
+      <div class="proof-grid">
+        <div class="proof-card glass-card">
+          <div class="proof-quote">
+            "Within 3 weeks, our AI system booked 47 calls while I was on vacation. Closed €89K without touching my phone."
           </div>
-          <div class="case-body">
-            <div class="case-quote">
-              "I was drowning in customer service messages. Now AI handles 400+ inquiries daily. My team focuses on growth, not firefighting."
+          <div class="proof-author">
+            <div class="author-avatar">MB</div>
+            <div class="author-info">
+              <span class="author-name">Marco B.</span>
+              <span class="author-role">Agency Owner</span>
             </div>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <span class="metric-before">Before: €45K/mo</span>
-                <span class="metric-after">After: €127K/mo</span>
-              </div>
-              <div class="case-metric">
-                <span class="metric-before">Response: 4 hours</span>
-                <span class="metric-after">Response: 30 seconds</span>
-              </div>
+          </div>
+          <div class="proof-stats">
+            <div class="proof-stat">
+              <span class="stat-label">Before</span>
+              <span class="stat-value">5 calls/week</span>
+            </div>
+            <div class="proof-stat">
+              <span class="stat-label">After</span>
+              <span class="stat-value highlight">47 calls/week</span>
             </div>
           </div>
         </div>
-
-        <div class="case-study glass-card">
-          <div class="case-header">
-            <div class="case-avatar">AK</div>
-            <div class="case-info">
-              <span class="case-name">Alex K.</span>
-              <span class="case-business">Coaching Business</span>
-            </div>
-            <span class="case-package">Elite Package</span>
+        
+        <div class="proof-card glass-card">
+          <div class="proof-quote">
+            "Clawdbot handles 400+ customer inquiries daily. My team went from firefighting to actually growing the business."
           </div>
-          <div class="case-body">
-            <div class="case-quote">
-              "The AI call system books 15-20 qualified calls per day while I sleep. Last month I closed €180K working 3 hours/day."
+          <div class="proof-author">
+            <div class="author-avatar">SL</div>
+            <div class="author-info">
+              <span class="author-name">Sofia L.</span>
+              <span class="author-role">E-commerce Brand</span>
             </div>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <span class="metric-before">Before: 5 calls/week</span>
-                <span class="metric-after">After: 80+ calls/week</span>
-              </div>
-              <div class="case-metric">
-                <span class="metric-before">Workload: 60 hrs/wk</span>
-                <span class="metric-after">Workload: 15 hrs/wk</span>
-              </div>
+          </div>
+          <div class="proof-stats">
+            <div class="proof-stat">
+              <span class="stat-label">Response Time</span>
+              <span class="stat-value">4 hours → 30 sec</span>
+            </div>
+            <div class="proof-stat">
+              <span class="stat-label">Revenue</span>
+              <span class="stat-value highlight">+182%</span>
             </div>
           </div>
         </div>
-
-        <div class="case-study glass-card">
-          <div class="case-header">
-            <div class="case-avatar">JM</div>
-            <div class="case-info">
-              <span class="case-name">James M.</span>
-              <span class="case-business">SaaS Startup</span>
-            </div>
-            <span class="case-package">Starter Package</span>
+        
+        <div class="proof-card glass-card">
+          <div class="proof-quote">
+            "The AI research system saves me 15 hours per week. I get competitor insights and market trends automatically."
           </div>
-          <div class="case-body">
-            <div class="case-quote">
-              "Started with the chatbot. Within 2 weeks, lead qualification was on autopilot. Upgraded to Growth in month 2."
-            </div>
-            <div class="case-metrics">
-              <div class="case-metric">
-                <span class="metric-before">Before: 12% conversion</span>
-                <span class="metric-after">After: 34% conversion</span>
-              </div>
-              <div class="case-metric">
-                <span class="metric-before">MRR: €8K</span>
-                <span class="metric-after">MRR: €31K</span>
-              </div>
+          <div class="proof-author">
+            <div class="author-avatar">AK</div>
+            <div class="author-info">
+              <span class="author-name">Alex K.</span>
+              <span class="author-role">SaaS Founder</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="logo-strip">
-        <span class="logo-label">Trusted by entrepreneurs from</span>
-        <div class="logos">
-          <span class="logo-text">Y Combinator</span>
-          <span class="logo-text">Techstars</span>
-          <span class="logo-text">500 Startups</span>
-          <span class="logo-text">Seedcamp</span>
+          <div class="proof-stats">
+            <div class="proof-stat">
+              <span class="stat-label">Hours Saved</span>
+              <span class="stat-value">15/week</span>
+            </div>
+            <div class="proof-stat">
+              <span class="stat-label">Decision Speed</span>
+              <span class="stat-value highlight">3x faster</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Objections -->
-  <section class="faq-section" id="faq">
+  <!-- Interactive CTA -->
+  <section class="section" id="interactive">
+    <div class="container">
+      <div class="interactive-banner glass-card">
+        <div class="banner-content">
+          <span class="section-tag">Free Assessment</span>
+          <h2>What's Your <span class="text-gradient">AI Readiness</span> Score?</h2>
+          <p>Take our 2-minute quiz and discover how much time and money you could save with automation.</p>
+          <a href="tools.html" class="btn btn-primary btn-large btn-glow">
+            <span>Take the Quiz</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+        <div class="banner-visual">
+          <div class="score-preview">
+            <div class="score-ring">
+              <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" class="ring-bg"/>
+                <circle cx="50" cy="50" r="45" class="ring-progress"/>
+              </svg>
+              <span class="score-value">?</span>
+            </div>
+            <span class="score-label">Your Score</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-dark" id="faq">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">QUESTIONS</span>
-        <h2 class="section-title">Let's Address the <span class="text-gradient">Elephant</span></h2>
+        <span class="section-tag">Questions</span>
+        <h2 class="section-title">Common <span class="text-gradient">Questions</span></h2>
       </div>
-
+      
       <div class="faq-grid">
         <div class="faq-item glass-card">
-          <div class="faq-question">
-            <span>"I don't have time to implement this"</span>
-            <span class="faq-toggle">+</span>
-          </div>
+          <button class="faq-question">
+            <span>How long does implementation take?</span>
+            <span class="faq-icon">+</span>
+          </button>
           <div class="faq-answer">
-            <p>That's exactly why we do it FOR you. We build everything. You approve. Takes 2-3 hours of your time total over 4 weeks. After that? You save 20+ hours every week. Forever.</p>
+            <p>Most AI systems are live within 2-4 weeks. Simple chatbots can be deployed in days. Complex multi-system integrations may take 4-6 weeks. We move fast without cutting corners.</p>
           </div>
         </div>
-
+        
         <div class="faq-item glass-card">
-          <div class="faq-question">
-            <span>"I'm not technical enough"</span>
-            <span class="faq-toggle">+</span>
-          </div>
+          <button class="faq-question">
+            <span>Do I need technical knowledge?</span>
+            <span class="faq-icon">+</span>
+          </button>
           <div class="faq-answer">
-            <p>Neither are 80% of our clients. You don't need to be. We handle all the technical work. You get a simple dashboard even your grandma could use. If you can send an email, you can run these systems.</p>
+            <p>Zero. We handle everything — design, development, integration, training. You get a simple dashboard to monitor results. If you can send an email, you can use our systems.</p>
           </div>
         </div>
-
+        
         <div class="faq-item glass-card">
-          <div class="faq-question">
-            <span>"Will this actually work for MY business?"</span>
-            <span class="faq-toggle">+</span>
-          </div>
+          <button class="faq-question">
+            <span>What if AI makes mistakes?</span>
+            <span class="faq-icon">+</span>
+          </button>
           <div class="faq-answer">
-            <p>We've automated everything from e-commerce to coaching to SaaS to local services. If you have leads, sales, and customer communication — AI can transform it. Our strategy call will confirm fit before you invest a cent.</p>
+            <p>We build in human escalation paths. When the AI is uncertain, it routes to your team. We also continuously train and improve based on real conversations. Accuracy improves over time.</p>
           </div>
         </div>
-
+        
         <div class="faq-item glass-card">
-          <div class="faq-question">
-            <span>"What if it doesn't deliver ROI?"</span>
-            <span class="faq-toggle">+</span>
-          </div>
+          <button class="faq-question">
+            <span>What's the investment?</span>
+            <span class="faq-icon">+</span>
+          </button>
           <div class="faq-answer">
-            <p>Then we work for free until it does. Our 90-day guarantee isn't marketing fluff — it's written into your contract. We only win when you win. Zero risk on your side.</p>
+            <p>Projects start at €2,999 for focused automation. Full business transformation packages range from €4,999-€9,999. ROI typically shows within 30-60 days. Book a call for custom pricing.</p>
           </div>
         </div>
-
+        
         <div class="faq-item glass-card">
-          <div class="faq-question">
-            <span>"Why is this investment so high?"</span>
-            <span class="faq-toggle">+</span>
-          </div>
+          <button class="faq-question">
+            <span>Will this work for my industry?</span>
+            <span class="faq-icon">+</span>
+          </button>
           <div class="faq-answer">
-            <p>Because we're not selling a course or a template. We're building you a custom revenue machine. Compare €5K one-time to hiring one person at €4K/month forever. The math is obvious. This pays for itself in weeks, not years.</p>
+            <p>If you have leads, sales, and customer communication — AI can transform it. We've automated agencies, e-commerce, SaaS, coaching, consulting, and local services. Our discovery call confirms fit.</p>
           </div>
         </div>
-
+        
         <div class="faq-item glass-card">
-          <div class="faq-question">
-            <span>"Can I talk to someone first?"</span>
-            <span class="faq-toggle">+</span>
-          </div>
+          <button class="faq-question">
+            <span>What happens after launch?</span>
+            <span class="faq-icon">+</span>
+          </button>
           <div class="faq-answer">
-            <p>Absolutely. That's what the strategy call is for. 30 minutes, no pitch. We'll audit your business, show you exactly what we'd automate, and give you the roadmap — whether you work with us or not.</p>
+            <p>We don't disappear. Every package includes support and optimization. We monitor your systems, fix issues, and continuously improve performance. You're never left alone.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA / Application -->
-  <section class="application-section" id="application">
+  <!-- Contact / CTA -->
+  <section class="section" id="contact">
     <div class="container">
-      <div class="application-wrapper">
-        <div class="application-content">
-          <span class="section-tag">LIMITED AVAILABILITY</span>
-          <h2 class="section-title">Ready to <span class="text-gradient">Transform</span> Your Business?</h2>
-          <p class="application-desc">We work with 8 new clients per month to ensure quality. Apply now to secure your spot.</p>
+      <div class="contact-wrapper">
+        <div class="contact-content">
+          <span class="section-tag">Let's Talk</span>
+          <h2 class="section-title">Ready to <span class="text-gradient">Automate</span>?</h2>
+          <p class="contact-desc">Book a free 30-minute strategy call. We'll audit your business, identify automation opportunities, and give you a clear roadmap — whether you work with us or not.</p>
           
-          <div class="urgency-bar glass-card">
-            <div class="urgency-icon">⏱️</div>
-            <div class="urgency-text">
-              <span class="urgency-label">March Cohort</span>
-              <span class="urgency-status"><strong>3 spots remaining</strong></span>
+          <div class="contact-benefits">
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Free business automation audit</span>
             </div>
-            <div class="urgency-timer" id="urgencyTimer">
-              <div class="timer-unit">
-                <span class="timer-value" id="timerDays">00</span>
-                <span class="timer-label">Days</span>
-              </div>
-              <div class="timer-unit">
-                <span class="timer-value" id="timerHours">00</span>
-                <span class="timer-label">Hours</span>
-              </div>
-              <div class="timer-unit">
-                <span class="timer-value" id="timerMins">00</span>
-                <span class="timer-label">Mins</span>
-              </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>Custom AI roadmap for your business</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>ROI projections and timeline</span>
+            </div>
+            <div class="benefit-item">
+              <span class="benefit-check">✓</span>
+              <span>No commitment required</span>
             </div>
           </div>
         </div>
-
-        <div class="application-form glass-card">
-          <h3>Apply for Your Strategy Session</h3>
-          <p>Takes 60 seconds. No commitment.</p>
-          
-          <form id="applicationForm" onsubmit="submitApplication(event)">
-            <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" name="name" required placeholder="John Smith">
+        
+        <div class="contact-form glass-card">
+          <h3>Book Your Strategy Call</h3>
+          <form id="contactForm" onsubmit="submitContact(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstName" required placeholder="John">
+              </div>
+              <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" name="lastName" required placeholder="Smith">
+              </div>
             </div>
             <div class="form-group">
               <label>Email</label>
               <input type="email" name="email" required placeholder="john@company.com">
             </div>
             <div class="form-group">
-              <label>Phone</label>
-              <input type="tel" name="phone" required placeholder="+1 234 567 890">
-            </div>
-            <div class="form-group">
               <label>Business Type</label>
-              <select name="business_type" required>
+              <select name="businessType" required>
                 <option value="">Select your business...</option>
-                <option value="agency">Agency</option>
-                <option value="ecommerce">E-commerce</option>
-                <option value="coaching">Coaching / Consulting</option>
+                <option value="agency">Agency / Consultancy</option>
+                <option value="ecommerce">E-commerce / Retail</option>
                 <option value="saas">SaaS / Software</option>
-                <option value="services">Local Services</option>
+                <option value="coaching">Coaching / Training</option>
+                <option value="services">Professional Services</option>
                 <option value="other">Other</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Monthly Revenue</label>
-              <select name="revenue" required>
-                <option value="">Select range...</option>
-                <option value="under-10k">Under €10K</option>
-                <option value="10k-50k">€10K - €50K</option>
-                <option value="50k-100k">€50K - €100K</option>
-                <option value="100k-500k">€100K - €500K</option>
-                <option value="500k+">€500K+</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label>What's your biggest challenge right now?</label>
-              <textarea name="challenge" rows="3" placeholder="Tell us briefly..."></textarea>
+              <label>What do you want to automate?</label>
+              <textarea name="goals" rows="3" placeholder="Lead generation, customer support, sales follow-ups..."></textarea>
             </div>
             <button type="submit" class="btn btn-primary btn-large btn-full btn-glow">
-              <span>Submit Application</span>
-              <div class="btn-shine"></div>
+              <span>Book My Strategy Call</span>
             </button>
-            <p class="form-note">🔒 Your information is secure and will never be shared</p>
+            <p class="form-note">🔒 Your information is secure and never shared</p>
           </form>
-
+          
           <div class="form-success" id="formSuccess">
             <div class="success-icon">✓</div>
-            <h3>Application Received!</h3>
-            <p>We'll review your application and reach out within 24 hours to schedule your strategy session.</p>
+            <h3>Call Booked!</h3>
+            <p>We'll reach out within 24 hours to schedule your strategy session.</p>
           </div>
         </div>
       </div>
@@ -871,21 +636,36 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
+      <div class="footer-main">
         <div class="footer-brand">
-          <span class="brand-text">ZOOM<span class="brand-accent">Growth</span></span>
-          <p>Building AI systems that scale businesses.</p>
+          <a href="/" class="nav-brand">
+            <span class="brand-icon">⚡</span>
+            <span class="brand-text">ZOOM<span class="brand-accent">Growth</span></span>
+          </a>
+          <p>AI-powered business automation for companies ready to scale.</p>
         </div>
         <div class="footer-links">
-          <a href="#process">How It Works</a>
-          <a href="#offer">Investment</a>
-          <a href="#proof">Results</a>
-          <a href="#faq">FAQ</a>
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="/">Home</a>
+            <a href="services.html">Services</a>
+            <a href="tools.html">AI Tools</a>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <a href="services.html#chatbots">AI Chatbots</a>
+            <a href="services.html#automation">Workflow Automation</a>
+            <a href="services.html#content">Content Creation</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#contact">Contact</a>
+            <a href="#faq">FAQ</a>
+          </div>
         </div>
-        <div class="footer-legal">
-          <p>© 2026 ZOOM Growth. All rights reserved.</p>
-          <p>This site is not affiliated with Meta, Google, or any AI company.</p>
-        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 ZOOM Growth. All rights reserved.</p>
       </div>
     </div>
   </footer>
