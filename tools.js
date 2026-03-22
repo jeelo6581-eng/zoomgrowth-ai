@@ -403,16 +403,14 @@ async function submitCapture(event) {
   submitBtn.disabled = true;
   submitBtn.innerHTML = '<span>Sending...</span>';
   
-  // Send to GHL webhook
-  const ghlWebhook = 'https://services.leadconnectorhq.com/hooks/uI0j6ohgXfotkrh6SDU1/webhook-trigger/3a8cc059-8b73-4366-a495-395ed0b9c985';
-  
   try {
-    await fetch(ghlWebhook, {
+    // Send to our API (handles GHL + quiz result email)
+    await fetch('/api/lead', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      mode: 'no-cors',
       body: JSON.stringify({
         email: email,
+        quizScore: window.lastQuizScore || null,
         source: 'ZOOM Growth - AI Quiz'
       })
     });
