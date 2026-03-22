@@ -141,7 +141,7 @@ async function submitContact(event) {
         lastName: data.lastName,
         email: data.email,
         phone: data.phone || '',
-        notes: `Business Type: ${data.businessType}\nGoals: ${data.goals}\n\nSource: ZOOM Growth Website - Contact Form\nSubmitted: ${new Date().toLocaleString()}`
+        source: 'ZOOM Growth Website'
       })
     });
     
