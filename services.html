@@ -460,7 +460,7 @@
               <li><span class="check">✓</span> 30-day support</li>
             </ul>
           </div>
-          <a href="/#contact" class="btn btn-secondary btn-full">Get Started</a>
+          <button class="btn btn-secondary btn-full" onclick="checkout('starter')">Get Started</button>
         </div>
         
         <div class="pricing-card glass-card featured">
@@ -484,7 +484,7 @@
               <li><span class="check">✓</span> 60-day support + training</li>
             </ul>
           </div>
-          <a href="/#contact" class="btn btn-primary btn-full btn-glow">Get Started</a>
+          <button class="btn btn-primary btn-full btn-glow" onclick="checkout('growth')">Get Started</button>
         </div>
         
         <div class="pricing-card glass-card">
@@ -508,7 +508,7 @@
               <li><span class="check">✓</span> Weekly strategy calls</li>
             </ul>
           </div>
-          <a href="/#contact" class="btn btn-secondary btn-full">Get Started</a>
+          <button class="btn btn-secondary btn-full" onclick="checkout('enterprise')">Get Started</button>
         </div>
       </div>
       
@@ -571,6 +571,38 @@
     </div>
   </footer>
 
+  <script src="https://js.stripe.com/v3/"></script>
   <script src="scripts.js"></script>
+  <script>
+    // Stripe Checkout
+    const stripe = Stripe('pk_live_51Mj149AXBuDT2hpo1qb8JzYBmTUDydHOaC0mxP5eTUPltL2m9ZSacEazRGG58mDac7DKL8Ub0vqfOESilOL9Q4nv00eXb2bQDJ');
+    
+    const prices = {
+      starter: 'price_1TDvISAXBuDT2hpoQbvhKJ0W',
+      growth: 'price_1TDvIcAXBuDT2hpofj6ecw7D',
+      enterprise: 'price_1TDvImAXBuDT2hpoMvlubbjX'
+    };
+    
+    async function checkout(tier) {
+      const btn = event.target;
+      btn.disabled = true;
+      btn.textContent = 'Redirecting...';
+      
+      try {
+        const response = await fetch('/api/create-checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ priceId: prices[tier], tier: tier })
+        });
+        
+        const { sessionId } = await response.json();
+        await stripe.redirectToCheckout({ sessionId });
+      } catch (error) {
+        // Fallback: redirect to Stripe Payment Link or contact
+        console.error('Checkout error:', error);
+        window.location.href = '/#contact';
+      }
+    }
+  </script>
 </body>
 </html>

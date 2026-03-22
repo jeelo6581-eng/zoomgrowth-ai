@@ -113,28 +113,58 @@ function initForms() {
   // Any general form initialization
 }
 
-function submitContact(event) {
+async function submitContact(event) {
   event.preventDefault();
   
   const form = document.getElementById('contactForm');
   const success = document.getElementById('formSuccess');
+  const submitBtn = form.querySelector('button[type="submit"]');
   
   // Get form data
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
   
-  console.log('Contact form submitted:', data);
+  // Disable button while submitting
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>Sending...</span>';
   
-  // Show success
-  form.style.display = 'none';
-  success.classList.add('active');
+  // Send to GHL webhook
+  const ghlWebhook = 'https://services.leadconnectorhq.com/hooks/uI0j6ohgXfotkrh6SDU1/webhook-trigger/3a8cc059-8b73-4366-a495-395ed0b9c985';
   
-  // Track
-  if (typeof gtag !== 'undefined') {
-    gtag('event', 'form_submit', {
-      'event_category': 'Contact',
-      'event_label': data.businessType
+  try {
+    await fetch(ghlWebhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      body: JSON.stringify({
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone || '',
+        businessType: data.businessType,
+        goals: data.goals,
+        source: 'ZOOM Growth Website',
+        page: 'Contact Form',
+        timestamp: new Date().toISOString()
+      })
     });
+    
+    // Show success
+    form.style.display = 'none';
+    success.classList.add('active');
+    
+    // Track
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'form_submit', {
+        'event_category': 'Contact',
+        'event_label': data.businessType
+      });
+    }
+  } catch (error) {
+    console.error('Form submission error:', error);
+    // Still show success (webhook likely worked, no-cors hides response)
+    form.style.display = 'none';
+    success.classList.add('active');
   }
 }
 

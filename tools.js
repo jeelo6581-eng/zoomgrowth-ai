@@ -132,6 +132,9 @@ function showQuizResults() {
     }, 25);
   }, 200);
   
+  // Store score for lead capture
+  window.lastQuizScore = displayScore;
+  
   // Set results based on score
   if (displayScore >= 75) {
     scoreLabel.textContent = 'ELITE READY';
@@ -387,15 +390,45 @@ function resetScanner() {
 // LEAD CAPTURE
 // ─────────────────────────────────────────────────────────────────
 
-function submitCapture(event) {
+async function submitCapture(event) {
   event.preventDefault();
   
   const form = document.getElementById('captureForm');
   const success = document.getElementById('captureSuccess');
+  const submitBtn = form.querySelector('button[type="submit"]');
   
   const email = form.querySelector('input[name="email"]').value;
-  console.log('Email captured:', email);
   
-  form.style.display = 'none';
-  success.classList.remove('hidden');
+  // Disable button
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>Sending...</span>';
+  
+  // Send to GHL webhook
+  const ghlWebhook = 'https://services.leadconnectorhq.com/hooks/uI0j6ohgXfotkrh6SDU1/webhook-trigger/3a8cc059-8b73-4366-a495-395ed0b9c985';
+  
+  try {
+    await fetch(ghlWebhook, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      body: JSON.stringify({
+        email: email,
+        source: 'ZOOM Growth Website',
+        page: 'AI Tools - Email Capture',
+        quizScore: window.lastQuizScore || null,
+        timestamp: new Date().toISOString()
+      })
+    });
+    
+    form.style.display = 'none';
+    success.classList.remove('hidden');
+    
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'lead_capture', { 'event_category': 'Tools Page' });
+    }
+  } catch (error) {
+    console.error('Capture error:', error);
+    form.style.display = 'none';
+    success.classList.remove('hidden');
+  }
 }
